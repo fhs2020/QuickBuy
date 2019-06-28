@@ -19,7 +19,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Email))
+                AdicionarCritica("Email nao informado");
+
+            if (string.IsNullOrEmpty(Senha))
+                AdicionarCritica("Senha nao informado");
         }
     }
 }
