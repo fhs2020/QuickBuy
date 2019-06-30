@@ -16,6 +16,8 @@ namespace QuickBuy.Repository.Config
             //Builder utiliza o padrao Fluent
             builder.Property(x => x.Email).IsRequired().HasMaxLength(50);
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(50);
+
+            builder.HasMany(x => x.Pedidos).WithOne(p => p.Usuario);
         }
     }
 }

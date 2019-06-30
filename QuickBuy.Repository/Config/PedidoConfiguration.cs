@@ -15,6 +15,8 @@ namespace QuickBuy.Repository.Config
 
             builder.Property(p => p.DataPedido).IsRequired();
             builder.Property(p => p.DataPrevisaoEntrega).IsRequired();
+
+            builder.HasOne(p => p.FormaPagamento);
         }
     }
 }
